@@ -48,7 +48,7 @@
                             <div class="description">
                             	<p>
 	                            	This Network has been developed on The Hyperledger Fabric 1.0 Blockchain network to keep your Personally Identifiable Information(PII) valid, secure and eaily shareable.
-	                            	<br>Link in using LinkdIn - <a href="https://www.linkedin.com/in/saif-ali-4118a5148/"><strong>Saif Ali</strong></a>, <a href="#"><strong>Rahul Amin</strong></a>
+	                            	<br>Link in using LinkdIn  -  <a href="https://www.linkedin.com/in/saif-ali-4118a5148/"><strong>Saif Ali</strong></a>,  <a href="#"><strong>Rahul Amin</strong></a>
                             	</p>
                             </div>
                         </div>
@@ -58,34 +58,20 @@
                         	<div class="form-top">
                         		<div class="form-top-left">
                         			<h3>Pii-Net</h3>
-                            		<p>Enter your username and password to log on:</p>
+                            		<p>Welcome to the your node in the network</p>
                         		</div>
                         		<div class="form-top-right">
                         			<i class="fa fa-lock"></i>
                         		</div>
                             </div>
-                            <div class="form-bottom">
-			                    <form role="form" action="" method="post" class="login-form">
-                                    {% csrf_token %}
-
-                                      {{ form.non_field_errors }}
-
-                                      {% for hidden_field in form.hidden_fields %}
-                                        {{ hidden_field.errors }}
-                                        {{ hidden_field }}
-                                      {% endfor %}
-                                    {% for field in form.visible_fields %}
-                                    <div class="form-group">
-                                      {{ field.label_tag }}
-                                      {% render_field field class="form-control" %}
-                                      {% if field.help_text %}
-                                        <small class="form-text text-muted">{{ field.help_text }}</small>
-                                      {% endif %}
-                                    </div>
-                                  {% endfor %}
-			                        <button type="submit" class="btn">Log in</button>
-                                     <a href="/signup" style="color:green"> <button class="btn">Sign up</button></a>
-			                    </form>
+                            <div class="form-box">
+			                    <h5>Username     : {{user.username}}</h5><br>
+                                <h5>Name     : {{user.first_name}} {{user.last_name}}</h5><br>
+                                <h5>Email     : {{user.email}}</h5><br>
+                                <h5>Confirmed?     : {{user.is_active}}</h5><br>
+                                <h5>Date Joined     : {{user.date_joined}}</h5><br>
+                                <h5>Is DemiGod?     : {{user.is_superuser}}</h5><br>
+                                <a href="/logout"><button  class="btn">Log Out</button></a>
 		                    </div>
                         </div>
                     </div>
@@ -93,7 +79,7 @@
                         <div class="col-sm-6 col-sm-offset-3 social-login">
                         	<div class="social-login-buttons">
 	                        	<a class="btn btn-link-2" href="/admin">
-	                        		G.O.D. Mode
+	                        		DemiGod Mode
 	                        	</a>
                         	</div>
                         </div>
