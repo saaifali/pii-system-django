@@ -12,13 +12,19 @@
         </div>
     </div>
     <div class="card-body">
-        <p class="card-text">Username     : {{user.username}}</p>
-        <p class="card-text">Name     : {{user.first_name}} {{user.last_name}}</p>
-        <p class="card-text">Email     : {{user.email}}</p>
-        <p class="card-text">Confirmed?     : {{user.is_active}}</p>
-        <p class="card-text">Date Joined     : {{user.date_joined}}</p>
-        <p class="card-text">Is DemiGod?     : {{user.is_superuser}}</p>
-        <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a>
+        <form role="form" action="" method="post" class="login-form">
+            {% csrf_token %}
+
+
+            <div class="form-group">
+                <label>Authorize Member</label>
+              <input type="email" placeholder="Enter his/her email ID">
+            </div>
+
+            <button type="submit" class="btn" style="background-color: #4CAF50;">Authorize</button>
+        </form>
+
     </div>
+    <div class="card-footer"><a href="#" class="card-link">Card link</a>
+        <a href="#" class="card-link">Another link</a></div>
 </div>
