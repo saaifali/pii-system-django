@@ -14,8 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url, include
-from .views import home
+from .views import home, validate_email
 
 urlpatterns = [
-    url(r'^$', home, name='home')
+    url(r'^$', home, name='home'),
+    url(r'^ajax/validate_email/$', validate_email, name='validate_email'),
 ]

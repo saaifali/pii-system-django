@@ -18,13 +18,32 @@
 
             <div class="form-group">
                 <label>Authorize Member</label>
-              <input type="email" placeholder="Enter his/her email ID">
+              <input type="email" class="form-control" placeholder="Enter his/her email ID" id="member_email">
             </div>
 
-            <button type="submit" class="btn" style="background-color: #4CAF50;">Authorize</button>
+            <button type="submit" class="btn btn-outline-success btn-block">Authorize</button>
         </form>
+        <br><h3>Revoke Authorized Members : </h3>
+        <table class="table table-hover">
+    <thead>
+      <tr>
+          <th><center>Authorized Members</center></th>
+        <th><center>Revoke?</center></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>john@example.com</td>
+          <td><button class="btn btn-outline-danger btn-block">Revoke</button></td>
+      </tr>
+      <tr>
+        <td>john2@example1.com</td>
+          <td><button class="btn btn-outline-danger btn-block">Revoke</button></td>
+      </tr>
+    </tbody>
+  </table>
+        <button class="btn btn-outline-info btn-block">Refresh list</button>
 
     </div>
-    <div class="card-footer"><a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a></div>
+    <div class="card-footer"></div>
 </div>

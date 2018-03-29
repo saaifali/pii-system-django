@@ -43,3 +43,25 @@
                     </div>
                 </div>
  {% endblock %}
+
+{% block js %}
+  <script>
+    $("#member_email").change(function () {
+      var email = $(this).val();
+
+      $.ajax({
+        url: '/home/ajax/validate_email/',
+        data: {
+          'email': email
+        },
+        dataType: 'json',
+        success: function (data) {
+          if (data.is_taken) {
+            alert("A user with this email exists exists.");
+          }
+        }
+      });
+
+    });
+  </script>
+{% endblock %}
