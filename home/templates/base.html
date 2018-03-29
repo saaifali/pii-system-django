@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+{% load widget_tweaks %}
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Pii-Net Composer Network</title>
+
+        {% block head %} {% endblock %}
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/font-awesome/css/font-awesome.min.css' %}">
+		<link rel="stylesheet" href="{% static 'assets/css/form-elements.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="{% static 'assets/ico/favicon.png' %}">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static 'assets/ico/apple-touch-icon-144-precomposed.png' %}">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static 'assets/ico/apple-touch-icon-114-precomposed.png' %}">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static 'assets/ico/apple-touch-icon-72-precomposed.png' %}">
+        <link rel="apple-touch-icon-precomposed" href="{% static 'assets/ico/apple-touch-icon-57-precomposed.png' %}">
+
+    </head>
+
+    <body>
+
+        <!-- Top content -->
+        <div class="top-content">
+
+            <div class="inner-bg">
+                {% block content %}
+                {% endblock %}
+            </div>
+
+        </div>
+
+
+        <!-- Javascript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+        <script src="{% static 'assets/js/jquery-1.11.1.min.js' %}"></script>
+        <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'assets/js/jquery.backstretch.min.js' %}"></script>
+        {% block js %}
+        {% endblock %}
+        <script>
+            jQuery(document).ready(function() {
+
+                /*
+                    Fullscreen background
+                */
+                $.backstretch("{% static 'assets/img/backgrounds/1.jpg' %}");
+
+                /*
+                    Form validation
+                */
+                $('.login-form input[type="text"], .login-form input[type="password"], .login-form textarea').on('focus', function() {
+                    $(this).removeClass('input-error');
+                });
+
+                $('.login-form').on('submit', function(e) {
+
+                    $(this).find('input[type="text"], input[type="password"], textarea').each(function(){
+                        if( $(this).val() == "" ) {
+                            e.preventDefault();
+                            $(this).addClass('input-error');
+                        }
+                        else {
+                            $(this).removeClass('input-error');
+                        }
+                    });
+
+                });
+
+
+            });
+        </script>
+
+        <!--[if lt IE 10]>
+            <script src="{% static 'assets/js/placeholder.js' %}"></script>
+        <![endif]-->
+
+    </body>
+
+</html>

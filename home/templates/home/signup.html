@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load widget_tweaks %}
+
+{% block content %}
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text">
+                            <h1><strong>PII-Net</strong> Never lose your identity!</h1>
+                            <div class="description">
+                            	<p>
+	                            	This Network has been developed on The Hyperledger Fabric 1.0 Blockchain network to keep your Personally Identifiable Information(PII) valid, secure and eaily shareable.
+	                            	<br>Link in using LinkdIn  -  <a href="https://www.linkedin.com/in/saif-ali-4118a5148/"><strong>Saif Ali</strong></a>,  <a href="#"><strong>Rahul Amin</strong></a>
+                            	</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3 form-box">
+                        	<div class="form-top">
+                        		<div class="form-top-left">
+                        			<h3>Pii-Net</h3>
+                            		<p>Enter your username and password to log on:</p>
+                        		</div>
+                        		<div class="form-top-right">
+                        			<i class="fa fa-lock"></i>
+                        		</div>
+                            </div>
+                            <div class="form-bottom">
+			                    <form role="form" action="" method="post" class="login-form">
+                                    {% csrf_token %}
+
+                                      {{ form.non_field_errors }}
+
+                                      {% for hidden_field in form.hidden_fields %}
+                                        {{ hidden_field.errors }}
+                                        {{ hidden_field }}
+                                      {% endfor %}
+                                    {% for field in form.visible_fields %}
+                                    <div class="form-group">
+                                      {{ field.label_tag }}
+                                      {% render_field field class="form-control" %}
+                                      {% if field.errors %}
+                                        <small class="form-text text-muted">{{ field.errors }}</small>
+                                      {% endif %}
+                                    </div>
+                                  {% endfor %}
+			                        <button type="submit" class="btn" style="background-color: #4CAF50;">Sign up</button>
+			                    </form>
+		                    </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3 social-login">
+                        	<div class="social-login-buttons">
+	                        	<a class="btn btn-link-2" href="/admin">
+	                        		<i class="fa fa-facebook"></i>G.O.D. Mode
+	                        	</a>
+                        	</div>
+                        </div>
+                    </div>
+                </div>
+
+{% endblock %}

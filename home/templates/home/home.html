@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load widget_tweaks %}
+
+{% block content %}
+
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text">
+                            <h1><strong>PII-Net</strong> Never lose your identity!</h1>
+                            <div class="description">
+                            	<p>
+	                            	This Network has been developed on The Hyperledger Fabric 1.0 Blockchain network to keep your Personally Identifiable Information(PII) valid, secure and eaily shareable.
+	                            	<br>Link in using LinkdIn  -  <a href="https://www.linkedin.com/in/saif-ali-4118a5148/"><strong>Saif Ali</strong></a>,  <a href="#"><strong>Rahul Amin</strong></a>
+                            	</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            {% include "home/snippets/assetdetails.html" %}
+                        </div>
+                        <div class="col-md-4">
+                            {% include "home/snippets/transactions.html" %}
+                        </div>
+                        <div class="col-md-4">
+                            {% include "home/snippets/dump.html" %}
+                            <div class="fixed-bottom">
+                            <a href="/logout"><button  class="btn">Log Out</button></a>
+                            </div>
+                        </div>
+
+                        </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3 social-login">
+                        	<div class="social-login-buttons">
+	                        	<a class="btn btn-link-2" href="/admin">
+	                        		DemiGod Mode
+	                        	</a>
+                        	</div>
+                        </div>
+                    </div>
+                </div>
+ {% endblock %}

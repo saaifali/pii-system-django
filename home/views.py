@@ -14,9 +14,9 @@ def signup(request):
             return redirect('home')
     else:
         form = SignUpForm()
-    return render(request, template_name='signup.html', context={'form': form})
+    return render(request, template_name='home/signup.html', context={'form': form})
 
 
 def home(request):
     user = request.user
-    return render(request, template_name="home.html",context={"user":user} )
+    return render(request, template_name="home/home.html",context={"user":user} )

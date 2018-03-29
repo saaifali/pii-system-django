@@ -21,7 +21,7 @@ from home import urls as home_urls
 from home import views as home_views
 
 urlpatterns = [
-    url(r'^login/$', auth_views.login, {'template_name': 'login.html'}, name='login'),
+    url(r'^login/$', auth_views.login, {'template_name': 'home/login.html'}, name='login'),
     url(r'^logout/$', auth_views.logout, {'next_page':'/login'}, name='logout'),
     url(r'^signup/$', home_views.signup, name='signup'),
     url(r'^admin/', admin.site.urls),
